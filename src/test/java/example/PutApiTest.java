@@ -34,6 +34,27 @@ public class PutApiTest {
 
     }
 
+    @Test
+    public static void testForGitUnderstanding(){
+        payload = new HashMap();
+        payload.put("id", "2000");
+        payload.put("title", "automation123");
+        payload.put("description", "EAT Batch of SDET");
+        payload.put("pageCount", "100");
+        payload.put("excerpt", "Test");
+        payload.put("publishDate", "2024-12-21T15:15:09.338Z");
+
+        given().contentType(contentType).body(payload)
+                .when()
+                .put(urlPostRequest)
+                .then()
+                .statusCode(200)
+                .log()
+                .body();
+
+    }
+
+
 
 
     @Test
